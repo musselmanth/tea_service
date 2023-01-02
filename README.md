@@ -1,5 +1,7 @@
 # TEA SERVICE README
 
+![ruby](https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white) ![ror](https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
 ## Description
 
 Tea Service is an a solo practice Rails API application meant to simulate "take-home" challenges with future employment prospects. The challenge specifications can be found [here](https://mod4.turing.edu/projects/take_home/take_home_be).
