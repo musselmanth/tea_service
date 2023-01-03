@@ -6,3 +6,4 @@ FactoryBot.define do
     brewtime { 180 }
   end
 end
+
