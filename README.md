@@ -47,54 +47,54 @@ Tea Service is an a solo practice Rails API application meant to simulate "take-
 > Example Response:
 >
 > ```JSON
->  {
->    "data": [
->      {
->        "id": "1",
->        "type": "subscription",
->        "attributes": {
->          "title": "Tieluohan",
->          "price": 1423,
->          "frequency": 4,
->          "status": "active",
->          "teas": [
->            {
->              "tea_id": "9",
->              "quantity": 5
->            },
->            {
->              "tea_id": "15",
->              "quantity": 1
->            }
->          ]
->        }
->      },
->      {
->        "id": "2",
->        "type": "subscription",
->        "attributes": {
->          "title": "Shou Mei",
->          "price": 7857,
->          "frequency": 6,
->          "status": "cancelled",
->          "teas": [
->            {
->              "tea_id": "4",
->              "quantity": 7
->            },
->            {
->              "tea_id": "20",
->              "quantity": 8
->            },
->            {
->              "tea_id": "25",
->              "quantity": 2
->            }
->          ]
->        }
->      }
->    ]
->  }
+> {
+>   "data": [
+>     {
+>       "id": "1",
+>       "type": "subscription",
+>       "attributes": {
+>         "title": "Et aut.",
+>         "price": 6671,
+>         "frequency": 2,
+>         "status": "active",
+>         "teas": [
+>           {
+>             "tea_id": "9",
+>             "quantity": 9
+>           },
+>           {
+>             "tea_id": "15",
+>             "quantity": 10
+>           }
+>         ]
+>       }
+>     },
+>     {
+>       "id": "2",
+>       "type": "subscription",
+>       "attributes": {
+>         "title": "Fugit aut.",
+>         "price": 9808,
+>         "frequency": 2,
+>         "status": "cancelled",
+>         "teas": [
+>           {
+>             "tea_id": "4",
+>             "quantity": 8
+>           },
+>           {
+>             "tea_id": "20",
+>             "quantity": 9
+>           },
+>           {
+>             "tea_id": "25",
+>             "quantity": 7
+>           }
+>         ]
+>       }
+>     }
+>   ]
+> }
 > ```
 >
 > Notes:
@@ -110,12 +110,54 @@ Tea Service is an a solo practice Rails API application meant to simulate "take-
 >
 > POST `/api/v1/customers/<customer_id>/subscriptions`
 >
+> Example JSON Body:
+>
+> ```JSON
+> {
+>   "title": "Monthly Green Teas",
+>   "price": 4500,
+>   "frequency": 4,
+>   "teas": [
+>     {
+>       "quantity": 1,
+>       "tea_id":157
+>     },
+>     {
+>       "quantity": 4,
+>       "tea_id": 158
+>     }
+>   ]
+> }
+> ```
+>
+> Notes:
+>
+> - Frequency: Number of Weeks between orders. So 4 is equal to every 4 weeks or montly
+> - Price: Stored as integer in cents. 7857 = $75.57
+>
 > Example Response:
 >
 > ```JSON
 > {
 >   "data": {
->
+>     "id": "3",
+>     "type": "subscription",
+>     "attributes": {
+>       "title": "Monthly Green Teas",
+>       "price": 4500,
+>       "frequency": 4,
+>       "status": "active",
+>       "teas": [
+>         {
+>           "tea_id": "1",
+>           "quantity": 1
+>         },
+>         {
+>           "tea_id": "2",
+>           "quantity": 4
+>         }
+>       ]
+>     }
 >   }
 > }
 > ```
@@ -128,12 +170,37 @@ Tea Service is an a solo practice Rails API application meant to simulate "take-
 >
 > PATCH `/api/v1/customers/<customer_id>/subscriptions/<subscription_id>`
 >
+> Example JSON Body:
+>
+> ```JSON
+> {
+>   "status": "cancelled"
+> }
+> ```
+>
 > Example Response:
 >
 > ```JSON
 > {
 >   "data": {
->
+>     "id": "3",
+>     "type": "subscription",
+>     "attributes": {
+>       "title": "Monthly Green Teas",
+>       "price": 4500,
+>       "frequency": 4,
+>       "status": "cancelled",
+>       "teas": [
+>         {
+>           "tea_id": "1",
+>           "quantity": 1
+>         },
+>         {
+>           "tea_id": "2",
+>           "quantity": 4
+>         }
+>       ]
+>     }
 >   }
 > }
 > ```
