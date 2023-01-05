@@ -86,7 +86,7 @@ RSpec.describe 'subscriptions#index' do
       expect(response).to have_http_status(404)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
-      expected = {message: "your query could not be completed", errors: ["Couldn't find Customer with 'id'=1"]}
+      expected = {message: "your request could not be completed", errors: ["Couldn't find Customer with 'id'=1"]}
       expect(response_body).to eq(expected)
     end
 

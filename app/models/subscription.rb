@@ -4,4 +4,8 @@ class Subscription < ApplicationRecord
   has_many :teas, through: :subscription_teas
 
   enum status: [:cancelled, :active]
+
+  accepts_nested_attributes_for :subscription_teas
+
+  validates_numericality_of :frequency
 end

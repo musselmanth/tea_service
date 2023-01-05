@@ -6,7 +6,7 @@ class ErrorSerializer
 
   def to_hash
     {
-      message: "your query could not be completed",
+      message: "your request could not be completed",
       errors: @errors
     }
   end
