@@ -14,11 +14,16 @@ class Api::V1::SubscriptionsController < ApplicationController
     end
   end
 
+  def update
+    subscription = Subscription.find(params[:id])
+    subscription.update(subscription_params)
+  end
+
   private
 
   def subscription_params
-    sub_params = params.permit(:customer_id, :title, :price, :frequency, teas: [:quantity, :tea_id])
-    sub_params[:subscription_teas_attributes] = sub_params.delete :teas
+    sub_params = params.permit(:customer_id, :title, :price, :frequency, :status, teas: [:quantity, :tea_id])
+    sub_params[:subscription_teas_attributes] = sub_params.delete :teas if sub_params[:teas]
     sub_params
   end
 
