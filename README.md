@@ -47,12 +47,60 @@ Tea Service is an a solo practice Rails API application meant to simulate "take-
 > Example Response:
 >
 > ```JSON
-> {
->   "data": [
->
->   ]
-> }
+>  {
+>    "data": [
+>      {
+>        "id": "1",
+>        "type": "subscription",
+>        "attributes": {
+>          "title": "Tieluohan",
+>          "price": 1423,
+>          "frequency": 4,
+>          "status": "active",
+>          "teas": [
+>            {
+>              "tea_id": "9",
+>              "quantity": 5
+>            },
+>            {
+>              "tea_id": "15",
+>              "quantity": 1
+>            }
+>          ]
+>        }
+>      },
+>      {
+>        "id": "2",
+>        "type": "subscription",
+>        "attributes": {
+>          "title": "Shou Mei",
+>          "price": 7857,
+>          "frequency": 6,
+>          "status": "cancelled",
+>          "teas": [
+>            {
+>              "tea_id": "4",
+>              "quantity": 7
+>            },
+>            {
+>              "tea_id": "20",
+>              "quantity": 8
+>            },
+>            {
+>              "tea_id": "25",
+>              "quantity": 2
+>            }
+>          ]
+>        }
+>      }
+>    ]
+>  }
 > ```
+>
+> Notes:
+>
+> - Frequency: Number of Weeks between orders. So 4 is equal to every 4 weeks or montly
+> - Price: Stored as integer in cents. 7857 = $75.57
 >
 > [Back To Top](#api-endpoints)
 
