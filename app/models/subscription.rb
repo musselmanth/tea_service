@@ -7,5 +7,6 @@ class Subscription < ApplicationRecord
 
   accepts_nested_attributes_for :subscription_teas
 
-  validates_numericality_of :frequency
+  validates_numericality_of :frequency, :price
+  validates_presence_of :title, :frequency, :price
 end
