@@ -9,4 +9,10 @@ class Subscription < ApplicationRecord
 
   validates_numericality_of :frequency, :price
   validates_presence_of :title, :frequency, :price
+
+  def tea_summary
+    subscription_teas.pluck(:tea_id, :quantity).map do |tea_id, quantity|
+      {tea_id: tea_id.to_s, quantity: quantity}
+    end
+  end
 end
