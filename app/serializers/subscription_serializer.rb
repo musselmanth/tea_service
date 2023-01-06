@@ -7,9 +7,6 @@ class SubscriptionSerializer
              :status
 
   attribute :teas do |sub|
-    sub.subscription_teas.map do |sub_tea|
-      {tea_id: sub_tea.tea_id.to_s, quantity: sub_tea.quantity}
-    end
+    sub.tea_summary
   end
-
 end
